@@ -1,0 +1,346 @@
+/* ==UserStyle==
+@name           Catppuccin for AutoAO3App
+@namespace      https://github.com/enigmalea/
+@version        1.0.0
+@description     Soothing pastel theme for AutoAO3App (https://autoao3app.fandom.tools)
+@author         enigmalea (https://www.enigmalea.quest)
+@homepageURL    https://github.com/catppuccin/autoao3app
+@supportURL     https://github.com/catppuccin/autoao3app/issues
+@updateURL      https://github.com/catppuccin/autoao3app/raw/main/catppuccin.user.css
+@license        MIT
+
+@preprocessor   stylus
+@var select theme "Theme" ["Latte", "Frappe", "Macchiato*", "Mocha"]
+}
+==/UserStyle== */
+@-moz-document domain("autoao3app.firebaseapp.com"),
+domain("autoao3app.fandom.tools") {
+    colorscheme(theme) {
+        if (theme=="Latte") {
+            --background: #eff1f5;
+            --mantle: #e6e9ef;
+            --overlay: #9ca0b0;
+            --text: #4c4f69;
+            --comment: #8c8fa1;
+            --link: #dc8a78;
+            --input: #ccd0da;
+            --tag-font: #1e66f5;
+            --tag-background: rgba(138, 173, 244, 0.15);
+            --borders-active: #7287fd;
+            --borders: #9ca0b0;
+            --green: #40a02b;
+            --orange: #fe640b;
+            --red: #d20f39;
+            --yellow: #df8e1d;
+        }
+        else if (theme=="Frappe") {
+            --background: #303446;
+            --mantle: #292c3c;
+            --overlay: #737994;
+            --text: #c6d0f5;
+            --comment: #838ba7;
+            --link: #f2d5cf;
+            --input: #414559;
+            --tag-font: #8caaee;
+            --tag-background: rgba(138, 173, 244, 0.15);
+            --borders-active: #babbf1;
+            --borders: #737994;
+            --green: #a6d189;
+            --orange: #ef9f76;
+            --red: #e78284;
+            --yellow: #e5c890;
+        }
+        else if (theme=="Macchiato") {
+            --background: #24273a;
+            --mantle: #1e2030;
+            --overlay: #6e738d;
+            --text: #cad3f5;
+            --comment: #8087a2;
+            --link: #f4dbd6;
+            --input: #363a4f;
+            --tag-font: #8aadf4;
+            --tag-background: rgba(138, 173, 244, 0.15);
+            --borders-active: #b7bdf8;
+            --borders: #363a4f;
+            --green: #a6da95;
+            --orange: #f5a97f;
+            --red: #ed8796;
+            --yellow: #eed49f;
+        }
+        else if (theme=="Mocha") {
+            --background: #1e1e2e;
+            --mantle: #181825;
+            --overlay: #6c7086;
+            --text: #cdd6f4;
+            --comment: #7f849c;
+            --link: #f5e0dc;
+            --input: #313244;
+            --tag-font: #89b4fa;
+            --tag-background: rgba(138, 173, 244, 0.15);
+            --borders-active: #b4befe;
+            --borders: #6c7086;
+            --green: #a6e3a1;
+            --orange: #fab387;
+            --red: #f38ba8;
+            --yellow: #f9e2af;
+        }
+    }
+
+    :root {
+        if (theme=="Latte") {
+            colorscheme(Latte)
+        }
+        else if (theme=="Frappe") {
+            colorscheme(Frappe)
+        }
+        else if (theme=="Macchiato") {
+            colorscheme(Macchiato)
+        }
+        else if (theme=="Mocha") {
+            colorscheme(Mocha)
+        }
+    }
+
+    /*  General Body and Text styles   */
+    body,
+    .menu {
+        background-color: var(--background) !important;
+        color: var(--text);
+    }
+
+    .bg-gray {
+        background: var(--selection) !important;
+    }
+
+    hr {
+        border-color: var(--borders);
+    }
+
+    strong {
+        color: var(--link);
+    }
+
+    .text-primary {
+        color: var(--linke) !important;
+    }
+
+    .toast.toast-success,
+    .toast.toast-success strong,
+    .toast a,
+    .toast a:active,
+    .toast a:focus,
+    .toast a:hover,
+    .toast a:visited {
+        color: var(--text);
+        border: none;
+    }
+
+    .toast.toast-success {
+        background: var(--mantle);
+    }
+
+    .toast.toast-warning {
+        background: var(--yellow);
+        color: var(--background);
+        border-color: var(--yellow);
+    }
+
+    .warn {
+        color: var(--orange) !important;
+    }
+
+    .tooltip {
+        color: var(--red);
+    }
+
+    /*  Links & Tabs */
+    a,
+    a.active,
+    a:active,
+    a:focus,
+    a:hover,
+    a:visited,
+    .tab .tab-item a:focus,
+    .tab .tab-item a:hover,
+    .tab .tab-item.active a {
+        color: var(--link);
+    }
+
+    a:focus {
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+    }
+
+    .tab {
+        border-color: var(--borders);
+    }
+
+    .tab .tab-item.active a {
+        border-color: var(--link);
+    }
+
+    .badge:not([data-badge]):after,
+    .badge[data-badge]:after {
+        background: var(--link);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        color: var(--background);
+    }
+
+    /* Styles Dividers and Borders */
+    thead tr > th,
+    .table th,
+    .table td,
+    .table-resizer .table-resizer-grip {
+        border-color: var(--borders);
+    }
+
+    .table.table-striped tbody tr:nth-of-type(odd),
+    .tagset-table tr:nth-of-type(odd) {
+        background: var(--background);
+    }
+
+    .table.table-striped tbody tr:nth-of-type(even),
+    .tagset-table tr:nth-of-type(even) {
+        background: var(--mantle);
+    }
+
+    /* Form Styles */
+    .form-input,
+    textarea,
+    .form-select:not([multiple]):not([size]) {
+        background-color: var(--input);
+        border-color: var(--input);
+        color: var(--text) !important;
+    }
+
+    .form-input:focus,
+    .form-input:active,
+    .form-select:not([multiple]):not([size]):focus {
+        border-color: var(--borders-active);
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+
+    .btn-group:focus {
+        border: 1px solid var(--borders-active);
+    }
+
+    .btn,
+    .btn:link,
+    .btn:hover {
+        background: var(--input);
+        border-color: var(--input);
+        color: var(--link);
+    }
+
+    .menu {
+        border-color: var(--borders);
+    }
+
+    .btn:focus,
+    .btn:active,
+    .menu:focus,
+    .menu:active,
+    {
+        border-color: var(--borders-active);
+    }
+
+    .btn.btn-primary,
+    .btn.btn-primary:focus,
+    .btn.btn-primary:hover {
+        background: var(--input);
+        color: var(--link);
+        border-color: var(--input);
+    }
+
+
+    .form-checkbox .form-icon,
+    .form-radio .form-icon {
+        background: var(--background);
+        border-color: var(--borders);
+    }
+
+    .form-checkbox input:checked + .form-icon,
+    .form-radio input:checked + .form-icon,
+    .form-switch input:checked + .form-icon {
+        background: var(--input);
+        border-color: var(--borders);
+    }
+
+    .input-group .input-group-addon {
+        background: var(--input);
+        color: var(--link);
+        border-color: var(--input);
+    }
+
+    /* Menu Styles */
+    .divider {
+        border-color: var(--borders);
+    }
+        
+    .divider-vert[data-content]:after,
+    .divider[data-content]:after {
+        background: transparent;
+        color: var(--borders-active);
+        font-weight: bold;
+    }
+    
+    .menu {
+        border: 1px solid var(--borders);
+    }
+    
+    .empty {
+        background: var(--mantle);
+        color: var(--text);
+    }
+
+    /* Tag Pills */
+    .chip {
+        background: var(--tag-background);
+        color: var(--tag-font);
+    }
+
+    /* Scroll Button */
+    .scroll-top {
+        background: var(--mantle);
+        color: var(--link);
+        border: none;
+    }
+
+    /* Bookmark Heart Style */
+    .bookmark,
+    .bookmark-letter,
+    .bookmark-prompt,
+    .remove-prompt {
+        color: var(--red) !important;
+    }
+
+    .label {
+        background: var(--overlay);
+        color: var(--text);
+    }
+
+    /*  Sets Colors for HTML inside prompts    */
+    div.prompt-text b,
+    div.prompt-text strong {
+        color: var(--link);
+    }
+
+    div.prompt-text em,
+    div.prompt-text i {
+        color: var(--comment);
+    }
+
+    div.prompt-text u {
+        color: var(--yellow) !important;
+    }
+
+    .tagset-table td {
+        border: none !important;
+    }
+
+    .tagset-table th {
+        border-color: var(--borders) !important;
+    }
+}
