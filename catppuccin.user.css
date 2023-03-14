@@ -276,7 +276,7 @@ domain("autoao3app.fandom.tools") {
 
     /* Menu Styles */
     .divider {
-        border-color: var(--borders);
+        border:none;
     }
         
     .divider-vert[data-content]:after,
